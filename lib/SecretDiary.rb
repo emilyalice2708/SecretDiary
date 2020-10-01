@@ -8,8 +8,14 @@ class SecretDiary
     @locked
   end
 
+  def unlock
+    @locked = false
+  end
+
   def add_entry(entry)
     return "Error, diary locked." if @locked
+    @entries << entry
+    return "Entry added."
   end
 
   def get_entries
