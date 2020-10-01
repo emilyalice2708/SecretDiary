@@ -1,0 +1,4 @@
+describe Padlock do
+
+  
+end
