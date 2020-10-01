@@ -16,5 +16,11 @@ describe SecretDiary do
     diary = SecretDiary.new
     expect(diary.get_entries).to eq("Error, diary locked.")
   end
-  
+
+  it "will allow add_entry when unlocked without error message" do
+      diary = SecretDiary.new
+      diary.unlock
+      expect(diary.add_entry("hello world")).to eq("Entry added.")
+  end
+
 end
