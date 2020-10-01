@@ -23,4 +23,12 @@ describe SecretDiary do
       expect(diary.add_entry("hello world")).to eq("Entry added.")
   end
 
+  it "will return entries using get_entries while unlocked" do
+    diary = SecretDiary.new
+    diary.unlock
+    diary.add_entry("hello world")
+    expect(diary.get_entries).to eq(["hello world"])
+  end
+
+
 end
