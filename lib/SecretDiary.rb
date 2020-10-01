@@ -1,29 +1,31 @@
+require_relative 'padlock'
+
 class SecretDiary
   def initialize
-    @locked = true
+    @padlock = Padlock.new
     @entries = []
   end
 
   def locked?
-    @locked
+    @padlock.locked?
   end
 
   def unlock
-    @locked = false
+    @padlock.unlock
   end
 
   def lock
-    @locked = true
+    @padlock.lock
   end
 
   def add_entry(entry)
-    return "Error, diary locked." if @locked
+    return "Error, diary locked." if @padlock.locked?
     @entries << entry
     return "Entry added."
   end
 
   def get_entries
-    return "Error, diary locked." if @locked
+    return "Error, diary locked." if @padlock.locked?
     return @entries
   end
 
