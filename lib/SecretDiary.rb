@@ -20,9 +20,7 @@ class SecretDiary
 
   def get_entries
     return "Error, diary locked." if @locked
-    if @locked == false
-      return @entries
-    end
+    return @entries
   end
 
 end
