@@ -12,4 +12,8 @@ class SecretDiary
     return "Error, diary locked." if @locked
   end
 
+  def get_entries
+    return "Error, diary locked." if @locked
+  end
+
 end
