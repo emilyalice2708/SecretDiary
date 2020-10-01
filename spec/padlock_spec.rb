@@ -6,4 +6,10 @@ describe Padlock do
     expect(padlock.locked?).to eq(true)
   end
 
+  it "can be unlocked" do
+    padlock = Padlock.new
+    padlock.unlock
+    expect(padlock.locked?).to eq(false)
+  end
+
 end
