@@ -12,6 +12,10 @@ class SecretDiary
     @locked = false
   end
 
+  def lock
+    @locked = true
+  end
+
   def add_entry(entry)
     return "Error, diary locked." if @locked
     @entries << entry
