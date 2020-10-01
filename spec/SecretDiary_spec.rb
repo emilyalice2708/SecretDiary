@@ -30,5 +30,11 @@ describe SecretDiary do
     expect(diary.get_entries).to eq(["hello world"])
   end
 
+  it "can be locked again" do
+    diary = SecretDiary.new
+    diary.unlock
+    diary.lock
+    expect(diary.add_entry("hello world")).to eq("Error, diary locked.")
+  end
 
 end
