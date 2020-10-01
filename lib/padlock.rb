@@ -6,4 +6,8 @@ class Padlock
   def locked?
     @locked
   end
+
+  def unlock
+    @locked = false
+  end
 end
